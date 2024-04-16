@@ -24,7 +24,7 @@ classdef Square < Rectangle & ColorMixin
 
             title('Square');
             text(gca, -1, obj.length, {obj.name, "Area: " + obj.area, "Color: " + obj.color, "Length: " + obj.length})
-            xlim([-1, obj.sideLength + 1]);
+            xlim([-1, obj.sideLength + 1]); % we want our margins to be just 1 unit larger than the dimensions
             ylim([-1, obj.sideLength + 1]);
         end
 

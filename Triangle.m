@@ -33,7 +33,7 @@ classdef Triangle < Shape & ColorMixin
             pointAwayFromBase = [obj.base, 0];
             peak = [obj.base/2, obj.height];
 
-            hold on;
+            hold on; % we use hold to apply multiply multiple lines on the graph
             plot([origin(1), pointAwayFromBase(1)], [origin(2), pointAwayFromBase(2)], obj.color);
             plot([pointAwayFromBase(1), peak(1)], [pointAwayFromBase(2), peak(2)], obj.color);
             plot([peak(1), origin(1)], [peak(2), origin(2)], obj.color);
@@ -44,7 +44,7 @@ classdef Triangle < Shape & ColorMixin
 
             text(gca, -1, obj.height, {obj.name, "Area: " + obj.area, "Color: " + obj.color,"Base: " + obj.base, "Height: " + obj.height})
             title('Triangle');
-            xlim([-1, obj.base + 1]);
+            xlim([-1, obj.base + 1]); % we want our margins to be just 1 unit larger than the dimensions
             ylim([-1, obj.height + 1]);
 
         end

@@ -32,7 +32,7 @@ classdef Rectangle < Shape & ColorMixin
 
         function Draw(obj)
             rectangle('Position',[0 0 obj.width obj.length],'FaceColor',obj.color);
-            xlim([-1, obj.width + 1]);
+            xlim([-1, obj.width + 1]); % we want our margins to be just 1 unit larger than the dimensions
             ylim([-1, obj.length + 1]);
             text(gca, -1, obj.length, {obj.name, "Area: " + obj.area, "Color: " + obj.color, "Length: " + obj.length, "Height: " + obj.width})
             title('Rectangle');

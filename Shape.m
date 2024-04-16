@@ -1,7 +1,7 @@
-classdef Shape < matlab.mixin.Heterogeneous
-    %UNTITLED2 Summary of this class goes here
-    %   Detailed explanation goes here
+% this shape class is used to build the other shapes and is the boilerplate
+% code for them 
 
+classdef Shape < matlab.mixin.Heterogeneous
     properties
         name
         area
@@ -9,12 +9,12 @@ classdef Shape < matlab.mixin.Heterogeneous
 
     methods
 
-        function obj = Shape(inpName)
+        function obj = Shape(inpName) % if no arguments are passed leave default
             if nargin == 0
                 obj.name;
                 obj.area;
             else
-                obj.name = inpName;
+                obj.name = inpName; % if arguments are passed set them
                 obj.area;
             end
 
@@ -26,7 +26,7 @@ classdef Shape < matlab.mixin.Heterogeneous
 
     end
 
-    methods(Static)
+    methods(Static)         % Statistics
         function CalculateStatistics(array)
             areaArr = [array.area];
             areaMean = mean(areaArr);

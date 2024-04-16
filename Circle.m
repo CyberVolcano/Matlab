@@ -24,7 +24,7 @@ classdef Circle < Shape & ColorMixin
             rectangle('Position',[obj.radius -(obj.radius) diameter diameter],'Curvature',[1,1],'FaceColor',obj.GetColor);
             daspect([1,1,1])
 
-            xlim([0-diameter, diameter*2]);
+            xlim([0-diameter, diameter*2]); % we want our margins to be just 1 unit larger than the dimensions
             ylim([0-diameter, diameter*2]);
             title('Circle');
             text(gca, -1, diameter, {obj.name, "Area: " + obj.area, "Color: " + obj.color, "Radius: " + obj.radius})
