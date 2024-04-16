@@ -5,6 +5,7 @@ prompt = "Welcome to the Shape Visualizer, Enter: " + ...
     "Rectangle, " + ...
     "Circle, " + ...
     "Square, " + ...
+    "EqTriangle, " + ...
     "Triangle ";
 
 userInput = input(prompt ,"s");
@@ -35,6 +36,12 @@ switch userInput
         triangleHeight = input("What is the height of the triangle?");
         triangleColor = input("What is the color of the triangle?");
         triangle = Triangle(triangleBase, triangleHeight, triangleColor);
+        triangle.Draw()
+    case "EqTriangle"
+        disp('Equilateral Triangle Selected!')
+        triangleBase = input("What is the side length of the triangle?");
+        triangleColor = input("What is the color of the triangle?");
+        triangle = EquilateralTriangle(triangleBase, triangleColor);
         triangle.Draw()
     otherwise
         disp('Error! Invalid Input');
